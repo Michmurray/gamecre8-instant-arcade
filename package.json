@@ -1,0 +1,10 @@
+{
+  "name": "gamecre8-instant-arcade",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}
