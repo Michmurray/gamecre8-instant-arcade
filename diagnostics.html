@@ -1,0 +1,13 @@
+<!doctype html><meta charset="utf-8"/>
+<title>Diagnostics</title><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>body{font-family:system-ui;margin:20px} pre{background:#111;color:#0f0;padding:12px;border-radius:8px;white-space:pre-wrap}</style>
+<h2>Diagnostics</h2>
+<button onclick="runHealth()">/api/health</button>
+<button onclick="runCheck()">/api/one-shot?prompt=test&redirect=0</button>
+<button onclick="runDaily()">/api/daily (redirect)</button>
+<pre id="out">Ready</pre>
+<script>
+async function runHealth(){ const r=await fetch('/api/health'); out.textContent = JSON.stringify(await r.json(),null,2); }
+async function runCheck(){ const r=await fetch('/api/one-shot?prompt=test&redirect=0'); out.textContent = JSON.stringify(await r.json(),null,2); }
+function runDaily(){ location.href='/api/daily'; }
+</script>
