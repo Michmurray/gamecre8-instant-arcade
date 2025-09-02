@@ -1,0 +1,15 @@
+<!doctype html><meta charset="utf-8"/>
+<title>GameCre8 — Prompt → Play</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>body{font-family:system-ui;margin:40px}input,button{font-size:18px;padding:10px}#log{margin-top:12px;color:#666}</style>
+<h2>Prompt → Play</h2>
+<input id="p" placeholder="Describe your game…" size="40"/>
+<button id="go">Generate & Play</button>
+<div id="log"></div>
+<script>
+const p = document.getElementById('p');
+document.getElementById('go').onclick = () => {
+  const q = p.value.trim(); if(!q) return alert('Enter a prompt');
+  location.href = '/api/one-shot?prompt=' + encodeURIComponent(q);
+};
+</script>
